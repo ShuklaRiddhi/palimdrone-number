@@ -1,0 +1,32 @@
+Given an integer x, return true if x is a 
+palindrome
+, and false otherwise.
+ solution 
+
+ 
+
+public class PalindromeChecker {
+    public static boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false; // Negative numbers can't be palindromes
+        }
+
+        int original = x;
+        int reversed = 0;
+
+        while (x != 0) {
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
+            x /= 10;
+        }
+
+        return original == reversed;
+    }
+
+    public static void main(String[] args) {
+        int x = 12321; // Change this to test different numbers
+        System.out.println(isPalindrome(x)); // Output should be true for palindrome numbers
+    }
+}
+
+
